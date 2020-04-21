@@ -1,0 +1,23 @@
+.slidingBar {
+    width: 900px;
+    height: 100px;
+    background: gray;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.slidingLump {
+    width: 100px;
+    height: 100px;
+    background: skyblue;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.go {
+    transform: translateX(800px)
+}
+
+.back {
+    transform: translateX(0px);
+}
