@@ -44,7 +44,7 @@ export default class slidingBlock extends React.Component<any, any> {
                 <button type="button" className="btn btn-primary" onClick={this.toggle.bind(this)}>toggle</button>
 
                 <div className="slidingBar">
-                    <div className="slidingLump" ref="lump"></div>
+                    <div className="slidingLump" ></div>
                 </div>
 
             </div>

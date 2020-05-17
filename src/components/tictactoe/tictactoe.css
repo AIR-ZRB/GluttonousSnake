@@ -1,0 +1,27 @@
+.tictactoe {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tictactoe-box {
+    width: 500px;
+    height: 500px;
+}
+.tictactoe-box ul {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.tictactoe-box ul li{
+    width: 33.3%;
+    height: 33.3%;
+    border: 1px solid #000;
+    list-style: none;
+    float: left;
+    font-size: 100px;
+    text-align: center;
+}
