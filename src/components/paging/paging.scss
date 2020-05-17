@@ -1,0 +1,47 @@
+.description {
+    h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+.code-demonstration {
+    margin-top: 50px;
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .demonstration {
+        border: 1px dotted #ccc;
+        border-radius: 5px;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .paging-box {
+        section {
+            $square: 36px;
+            width: $square;
+            height: $square;
+            line-height: $square;
+            margin: 0 5px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 3px;
+            float: left;
+            border: 1px solid #ccc;
+
+            &.active,
+            &:hover {
+                border-color: blue;
+                color: blue;
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@ import { HashRouter, Route, NavLink, Redirect } from "react-router-dom";
 
 import slidingBlock from "./slidingBlock/slidingBlock";
 import tictactoe from "./tictactoe/tictactoe";
+import paging from "./paging/paging";
 
 import "./index.scss";
 
@@ -19,16 +20,25 @@ export default class Index extends React.Component<any, any> {
                 {
                     id: "1",
                     name: "Home",
+                    CNname: "首页",
                     active: true
                 },
                 {
                     id: "2",
-                    name: "slidingBlock",
+                    name: "SlidingBlock",
+                    CNname: "滑块",
                     active: false
                 },
                 {
                     id: "3",
                     name: "Tictactoe",
+                    CNname: "井字棋",
+                    active: false
+                },
+                {
+                    id: "4",
+                    name: "paging",
+                    CNname: "分页",
                     active: false
                 }
             ]
@@ -43,12 +53,9 @@ export default class Index extends React.Component<any, any> {
     // 路由被点击的高亮
     routerListClickActive = (event: any): void=> {
         event.persist();
-        let clickActive = this.state.routerList.filter((item: any,index: number)=> item.name === event.target.innerHTML);
+        let clickActive = this.state.routerList.filter((item: any,index: number)=> item.CNname === event.target.innerHTML);
 
         clickActive = clickActive[0].id - 1;
-
-
-
 
         const routerList = JSON.parse(JSON.stringify(this.state.routerList));
         
@@ -91,11 +98,12 @@ export default class Index extends React.Component<any, any> {
 
                     {/* 右边内容区域 */}
                     <div className="router-content">
-                        <Redirect path="/" to="/home" />
-                        {/* <Redirect path="/" to="/tictactoe" /> */}
+                        {/* <Redirect path="/" to="/home" /> */}
+                        <Redirect path="/" to="/paging" />
                         <Route path="/home" component={Home}></Route>
                         <Route path="/slidingBlock" component={slidingBlock}></Route>
                         <Route path="/tictactoe" component={tictactoe}></Route>
+                        <Route path="/paging" component={paging}></Route>
                     </div>
                 </div>
             </HashRouter>
@@ -111,7 +119,7 @@ export default class Index extends React.Component<any, any> {
 function Home() {
     return (
         <div className="home">
-            Home
+            欢迎来到我的UI库
         </div>
     )
 }
@@ -121,7 +129,7 @@ function RouterList(props: any) {
     return (
         <>
             {
-                props.routerList.map((item: any)=> <li className={ item.active ? "list-group-item active" : "list-group-item" } key={item.name}><NavLink to={"/"+item.name} exact>{item.name}</NavLink></li>)
+                props.routerList.map((item: any)=> <li className={ item.active ? "list-group-item active" : "list-group-item" } key={item.name}><NavLink to={"/"+item.name} exact>{item.CNname}</NavLink></li>)
             }
         </>
     )
